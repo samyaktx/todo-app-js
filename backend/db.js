@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
-// mongodb+srv://samyaktpatil17:jLXlkNodGyxyY7qZ@cluster0.6f89o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+const connection = mongoose.connect(
+  `mongodb+srv://kirags123:8qPEa8KTKBEh2bss@cluster0.f3qlbuo.mongodb.net/todos`
+);
 
 const todoSchema = mongoose.Schema({
     title: String,
@@ -7,6 +10,6 @@ const todoSchema = mongoose.Schema({
     completed: Boolean
 });
 
-const todo = mongoose.model("todo", todoSchema);
+const todo = mongoose.model("todos", todoSchema);
 
 module.exports = { todo };
